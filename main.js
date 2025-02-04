@@ -14,6 +14,18 @@ app.post('/', (req, res) => {
   res.send('Hello World post!')
 })
 
+app.get('/', (req, res) => {
+  console.log("hey it is a get request")
+res.send('Hello World2!')
+})
+
+app.get('/index', (req, res) => {
+  console.log("hey it is index page")
+res.sendFile('templates/index.html',{root: __dirname})
+})
+
+
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
